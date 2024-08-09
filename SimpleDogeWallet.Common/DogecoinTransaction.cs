@@ -220,15 +220,16 @@ namespace SimpleDogeWallet
             var cancelTokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(17));
             var cancelToken = cancelTokenSource.Token;
 
-			//i was unable to redirect output from sendtx
-			var processStartInfo = new ProcessStartInfo("cmd.exe")
-			{
-				UseShellExecute = false,
-				CreateNoWindow = true,
-				RedirectStandardError = true,
-				RedirectStandardOutput = true,
-				RedirectStandardInput = true,
-			};
+            //i was unable to redirect output from sendtx
+            var processStartInfo = new ProcessStartInfo("cmd.exe")
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardError = true,
+                RedirectStandardOutput = true,
+                RedirectStandardInput = true,
+                WorkingDirectory = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), @"SimpleDogeWallet\")
+            };
 
             //var processStartInfo = new ProcessStartInfo("sendtx.exe", "-m 24 -s 15")
             //{

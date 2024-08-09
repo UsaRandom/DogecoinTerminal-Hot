@@ -8,12 +8,15 @@ using System.Threading.Tasks;
 
 using System.IO;
 using System.Reflection;
+
 namespace SimpleDogeInstaller
 {
-public class VcRedist2015Installer
+    public class VcRedist2015Installer : IInstaller
     {
-        public static void Install()
+        public void Install()
         {
+
+            Console.WriteLine("Installing VC++ 2015 Redist...");
 
             // Get the embedded resource
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -53,6 +56,11 @@ public class VcRedist2015Installer
             {
                 Console.WriteLine("Error installing VC++ 2015 Redistributable: " + process.ExitCode);
             }
+        }
+
+        public void Uninstall()
+        {
+
         }
     
     }

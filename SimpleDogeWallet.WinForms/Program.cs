@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Runtime.CompilerServices;
 
 namespace SimpleDogeWallet.WinForms
 {
@@ -21,6 +22,8 @@ namespace SimpleDogeWallet.WinForms
 		[STAThread]
 		private static void Main(string[] args)
 		{
+			Directory.SetCurrentDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"SimpleDogeWallet\"));
+
 			//prevent two instances from running,
 			//open previous instance's window and bring it to the top
 			Process currentProcess = Process.GetCurrentProcess();

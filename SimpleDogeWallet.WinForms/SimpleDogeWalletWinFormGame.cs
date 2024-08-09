@@ -75,8 +75,9 @@ namespace SimpleDogeWallet.WinForms
 			System.Windows.Forms.Control control = System.Windows.Forms.Control.FromHandle(handle);
 			_form = control as System.Windows.Forms.Form;
 			_form.FormClosing += Form1_FormClosing;
-			
-			Services.AddService(_form);
+            _form.Icon = new System.Drawing.Icon("Icon.ico");
+
+            Services.AddService(_form);
 
 			base.Initialize();
 
