@@ -162,6 +162,16 @@ namespace SimpleDogeWallet
 			Services.AddService<IClipboardService>(_clipboardService);
 
 
+			if(LibDogecoinTpmContext.Instance.IsSupportedPlatform)
+			{
+				Services.AddService<IPasswordService>(new TpmPasswordService(_settings));
+			}
+			else
+			{
+				Services.AddService<IPasswordService>(new BasicPasswordService(Services));
+			}
+
+
 			//text input selector
 			_textInputSelector = new SelectedControlVisitor(_screen);
 
@@ -252,7 +262,7 @@ namespace SimpleDogeWallet
 
                 _nav.PushAsync<LoadingPage>();
                 _nav.TryInsertBeforeAsync<WalletPage, LoadingPage>(("wallet", SimpleDogeWallet.Instance));
-
+                
                 Task.Run(async () =>
 				{
 			//		await _nav.PromptAsync<DisclaimerPage>();

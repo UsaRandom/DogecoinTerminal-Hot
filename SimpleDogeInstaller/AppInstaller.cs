@@ -42,6 +42,10 @@ namespace SimpleDogeInstaller
                     {
                         filePath = Path.Combine(programFiles, @"SimpleDogeWallet", entry.FullName);
                     }
+                    else if(entry.FullName.Contains("dogecoin.dll"))
+                    {
+                        filePath = Path.Combine(programFiles, @"SimpleDogeWallet", entry.FullName);
+                    }
                     else
                     {
                         filePath = Path.Combine(localAppData, @"SimpleDogeWallet", entry.FullName);

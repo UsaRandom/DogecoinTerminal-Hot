@@ -20,7 +20,7 @@ namespace SimpleDogeInstaller
 
             var destinationPath = Path.Combine(installPath, Path.GetFileName(currentExecutablePath));
 
-            File.Copy(currentExecutablePath, destinationPath);
+            File.Copy(currentExecutablePath, destinationPath, true);
 
 
 

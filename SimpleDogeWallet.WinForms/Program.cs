@@ -22,11 +22,14 @@ namespace SimpleDogeWallet.WinForms
 		[STAThread]
 		private static void Main(string[] args)
 		{
-			Directory.SetCurrentDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"SimpleDogeWallet\"));
+#if !DEBUG
+            Directory.SetCurrentDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"SimpleDogeWallet\"));
+#endif
 
-			//prevent two instances from running,
-			//open previous instance's window and bring it to the top
-			Process currentProcess = Process.GetCurrentProcess();
+
+            //prevent two instances from running,
+            //open previous instance's window and bring it to the top
+            Process currentProcess = Process.GetCurrentProcess();
 			Process[] processes = Process.GetProcessesByName(currentProcess.ProcessName);
 
 			foreach (var otherProcess in processes)

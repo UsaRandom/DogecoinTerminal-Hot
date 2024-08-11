@@ -8,7 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="dogecoin.dll">
+    <None Remove="libdogecoin\no-tpm\dogecoin.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="libdogecoin\no-tpm\dogecoin.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libdogecoin\tpm\dogecoin.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="sendtx.exe">

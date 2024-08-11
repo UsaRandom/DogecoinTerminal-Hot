@@ -193,19 +193,15 @@
   <Strings Id="terminal-walletlist-emptyslot"><![CDATA[Empty Slot]]></Strings>
   <Strings Id="terminal-walletlist-title"><![CDATA[Select a Wallet/Slot]]></Strings>
 
-  <Strings Id="terminal-walletlist-newwallet-enterpin"><![CDATA[Set Pin:]]></Strings>
-  <Strings Id="terminal-walletlist-newwallet-confirmpin"><![CDATA[Confirm Pin:]]></Strings>
-
-
-  <Strings Id="terminal-wallet-updatepin-newpin"><![CDATA[Enter New Pin:]]></Strings>
-  <Strings Id="terminal-wallet-updatepin-confirmpin"><![CDATA[Confirm New Pin:]]></Strings>
-
   <Strings Id="terminal-wallet-remove"><![CDATA[Remove Wallet]]></Strings>
 
-  <String Id="terminal-enteroppin-title"><![CDATA[Enter PIN to Unlock:]]></String>
 
+	<String Id="terminal-password-create-title"><![CDATA[Create Password:]]></String>
+	<String Id="terminal-password-pass"><![CDATA[Password]]></String>
+	<String Id="terminal-password-confirm"><![CDATA[Confirm Password]]></String>
 
-
-  <String Id="terminal-loading-text-broadcasting"><![CDATA[Broadcasting Transaction!
-This will take ~10 seconds.]]></String>
+	<String Id="terminal-password-title"><![CDATA[Enter Password:]]></String>
+	<String Id="terminal-password-submit"><![CDATA[Submit]]></String>
+	
+	
 </Strings>

@@ -82,48 +82,56 @@ namespace SimpleDogeWallet.Pages
 
 			int tpmFileNumber = _settings.GetInt("tpm-file-number", -1);
 
-			if (tpmFileNumber == -1)
+			if(LibDogecoinTpmContext.Instance.IsSupportedPlatform)
 			{
-				//need to make sure we don't overwrite other keys,
-				// so we need to find a good key number.
-				var tpmKeys = _ctx.ListKeysInTPM();
-				var takenNumbers = new List<int>();
 
-				// key names look like: "dogecoin_mnemonic_069"
-				foreach (var key in tpmKeys)
-				{
-					if (key.StartsWith("dogecoin_mnemonic_"))
-					{
-						int fileNumber = int.Parse(key.Split('_')[2]);
-						takenNumbers.Add(fileNumber);
-					}
-				}
+                if (tpmFileNumber == -1)
+                {
+                    //need to make sure we don't overwrite other keys,
+                    // so we need to find a good key number.
+                    var tpmKeys = LibDogecoinTpmContext.Instance.ListKeysInTPM();
+                    var takenNumbers = new List<int>();
 
-				for (var number = 0; number < 999; number++)
-				{
-					if (!takenNumbers.Contains(number))
-					{
-						tpmFileNumber = number;
-						break;
-					}
-				}
+                    // key names look like: "dogecoin_mnemonic_069"
+                    foreach (var key in tpmKeys)
+                    {
+                        if (key.StartsWith("dogecoin_mnemonic_"))
+                        {
+                            int fileNumber = int.Parse(key.Split('_')[2]);
+                            takenNumbers.Add(fileNumber);
+                        }
+                    }
 
-				if (tpmFileNumber == -1)
-				{
-					await _navigation.PromptAsync<ShortMessagePage>(("message", _strings.GetString("terminal-setup-tpm-is-full")));
-					_navigation.Pop();
-					return;
-				}
+                    for (var number = 0; number < 999; number++)
+                    {
+                        if (!takenNumbers.Contains(number))
+                        {
+                            tpmFileNumber = number;
+                            break;
+                        }
+                    }
 
-				_settings.Set("tpm-file-number", tpmFileNumber);
-			}
+                    if (tpmFileNumber == -1)
+                    {
+                        await _navigation.PromptAsync<ShortMessagePage>(("message", _strings.GetString("terminal-setup-tpm-is-full")));
+                        _navigation.Pop();
+                        return;
+                    }
+
+                    _settings.Set("tpm-file-number", tpmFileNumber);
+                }
+            }
+			else
+			{
+                _settings.Set("tpm-file-number", 1);
+            }
 
 
-			if (isNew)
+            if (isNew)
 			{
 
 				//we have a valid mnemonic, encrypt it with key stored in tpm
-				var mnemonicKey = _ctx.GenerateMnemonicEncryptWithTPM(tpmFileNumber, lang: "eng", space: "-");
+				var mnemonicKey = _services.GetService<IPasswordService>().CreatePassword();// _ctx.GenerateMnemonicEncryptWithTPM(tpmFileNumber, lang: "eng", space: "-");
 
 				mnemonic = _ctx.GenerateMnemonic(_strings.Language.LanguageCode, LibDogecoinContext.ENTROPY_SIZE_128);
 
@@ -167,9 +175,9 @@ namespace SimpleDogeWallet.Pages
 						}
 
 						//we have a valid mnemonic, encrypt it with key stored in tpm
-						var mnemonicKey = _ctx.GenerateMnemonicEncryptWithTPM(tpmFileNumber, lang: "eng", space: "-");
+						var mnemonicKey = _services.GetService<IPasswordService>().CreatePassword();//_ctx.GenerateMnemonicEncryptWithTPM(tpmFileNumber, lang: "eng", space: "-");
 
-						string encryptedMnemonic = Crypto.Encrypt(mnemonic, mnemonicKey);
+                        string encryptedMnemonic = Crypto.Encrypt(mnemonic, mnemonicKey);
 						string tempFilePath = Path.GetTempFileName();
 
 						File.WriteAllText(tempFilePath, encryptedMnemonic);

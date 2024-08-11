@@ -22,9 +22,9 @@ namespace SimpleDogeWallet
 
 		public SPVNodeBlockInfo NEW_WALLET_START_BLOCK = new SPVNodeBlockInfo()
 		{
-			Hash = "32a1625e7fe68f3b5e237e4351d6df12e92eb7f9130b4d60a8b1c803f09fafee",
-			BlockHeight = 5105268,
-			Timestamp = DateTimeOffset.FromUnixTimeSeconds(1708906209)
+			Hash = "dfabf09db6a20947965f8159bc3ec78252a3893124f53a32d3b13f12fdebd0e6",
+			BlockHeight = 5330000,
+			Timestamp = DateTimeOffset.FromUnixTimeSeconds(1723271918)
 		};
 
 		private SPVNode _spvNode;

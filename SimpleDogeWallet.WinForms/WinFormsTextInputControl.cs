@@ -15,6 +15,7 @@ namespace SimpleDogeWallet.WinForms
 	public class WinFormsTextInputControl : TextInputControl
 	{
 		private bool _selected = false;
+		private bool _isPassword = false;
 
 		private TextBox _textBox;
 
@@ -24,7 +25,11 @@ namespace SimpleDogeWallet.WinForms
 			: base(element)
 		{
 			PlaceholderTextStringDef = element.Attribute(nameof(PlaceholderTextStringDef))?.Value;
-		}
+
+			var isPassText = element.Attribute("Password")?.Value ?? "false";
+
+			_isPassword = isPassText.ToLower() == "true";
+        }
 
 		private string PlaceholderTextStringDef { get; set; }
 
@@ -36,7 +41,7 @@ namespace SimpleDogeWallet.WinForms
 				{
 					_textBox = new TextBox();
 					_textBox.Font = new Font("Comic Sans MS", 4.5f * TextSize, FontStyle.Bold, GraphicsUnit.Point);
-					((TextBoxBase)_textBox).AutoSize = false;
+					((TextBoxBase)_textBox).AutoSize = false;			
 				}
 				return _textBox;
 			}
@@ -142,7 +147,12 @@ namespace SimpleDogeWallet.WinForms
 																		BackgroundColor.Color.G,
 																		BackgroundColor.Color.B);
 
-				TextBoxControl.ReadOnly = !Editable;
+                if (_isPassword)
+                {
+                    TextBoxControl.PasswordChar = '●';
+                }
+
+                TextBoxControl.ReadOnly = !Editable;
 				TextBoxControl.Width = Math.Abs(screenCordEnd.X - screenCordStart.X);
 				TextBoxControl.Height = Math.Abs(screenCordEnd.Y - screenCordStart.Y);
 

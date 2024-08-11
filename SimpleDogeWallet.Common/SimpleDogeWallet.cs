@@ -149,7 +149,7 @@ namespace SimpleDogeWallet
 
 		public string GetMnemonic()
 		{
-			var key = _ctx.DecryptMnemonicWithTPM(_tpmFileNumber);
+			var key = Services.GetService<IPasswordService>().GetPassword();// _ctx.DecryptMnemonicWithTPM(_tpmFileNumber);
 
 			return Crypto.Decrypt(File.ReadAllText(LOADED_MNEMONIC_FILE), key);
 		}
