@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{801810BA-4081-4101-A3AE-856504B77906}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Dogecoin", "Lib.Dogecoin\Lib.Dogecoin.csproj", "{1217E430-DCB0-4781-941D-E48B7494AA4F}"
 EndProject
@@ -11,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDogeWallet.Common", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDogeWallet.WinForms", "SimpleDogeWallet.WinForms\SimpleDogeWallet.WinForms.csproj", "{0DDCDE70-078C-4F9B-B46D-CC5A1CB61226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDogeInstaller", "SimpleDogeInstaller\SimpleDogeInstaller.csproj", "{FFC4D6B8-B887-4016-B087-59E8C2826562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDogeInstaller", "SimpleDogeInstaller\SimpleDogeInstaller.csproj", "{FFC4D6B8-B887-4016-B087-59E8C2826562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

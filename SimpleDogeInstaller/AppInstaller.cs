@@ -75,7 +75,7 @@ namespace SimpleDogeInstaller
             Console.WriteLine("Creating StartMenu and Startup links...");
             // Create the shortcut
             WshShell shell = new WshShell();
-            string shortcutAddress = Path.Combine(localAppData, "SimpleDogeWallet\\Simple Ðoge Wallet.lnk");
+            string shortcutAddress = Path.Combine(localAppData, "SimpleDogeWallet\\Simple Doge Wallet.lnk");
             IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(shortcutAddress);
            
             // Set the shortcut properties
@@ -85,12 +85,12 @@ namespace SimpleDogeInstaller
             shortcut.IconLocation = Path.Combine(localAppData, @"SimpleDogeWallet\Icon.ico");
             shortcut.Save();
 
-            System.IO.File.Copy(shortcutAddress, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Simple Ðoge Wallet.lnk"), true);
+            System.IO.File.Copy(shortcutAddress, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Simple Doge Wallet.lnk"), true);
 
             shortcut.Arguments = "-h";
             shortcut.Save();
 
-            System.IO.File.Copy(shortcutAddress, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "Simple Ðoge Wallet.lnk"), true);
+            System.IO.File.Copy(shortcutAddress, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "Simple Doge Wallet.lnk"), true);
 
         }
 
@@ -100,6 +100,8 @@ namespace SimpleDogeInstaller
             
             FileHelper.TryDeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Simple Ðoge Wallet.lnk"));
             FileHelper.TryDeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "Simple Ðoge Wallet.lnk"));
+            FileHelper.TryDeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Simple Doge Wallet.lnk"));
+            FileHelper.TryDeleteFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "Simple Doge Wallet.lnk"));
 
             Console.WriteLine("Removing application files...");
 

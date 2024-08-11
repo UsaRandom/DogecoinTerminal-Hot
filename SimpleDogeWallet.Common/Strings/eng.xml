@@ -18,22 +18,13 @@
   <String Id="common-contacts-unknown"><![CDATA[Unknown]]></String>
 
 
-  <String Id="common-numpad-title"><![CDATA[Enter Pin:]]></String>
   <String Id="common-loading-title"><![CDATA[Doing Only Good Everyday...]]></String>
   <String Id="common-shortmsg-okbutton"><![CDATA[Ok]]></String>
   <String Id="common-yesno-yes"><![CDATA[Yes]]></String>
   <String Id="common-yesno-no"><![CDATA[No]]></String>
-
-
+	
 
   <String Id="terminal-title"><![CDATA[Simple Đoge Wallet]]></String>
-
-
-  <String Id="terminal-disclaimer-title"><![CDATA[Warning: Work-in-Progress!]]></String>
-  <String Id="terminal-disclaimer-text1">
-    <![CDATA[The following program is a work in progress.]]>
-  </String>
-  <String Id="terminal-disclaimer-text2"><![CDATA[Proceed at your own risk!]]></String>
 
 
   <String Id="terminal-disclaimer-wow"><![CDATA[wow]]></String>
@@ -57,12 +48,6 @@
   <String Id="terminal-setup-setupwallet"><![CDATA[Setup Wallet]]></String>
   <String Id="terminal-setup-newwallet"><![CDATA[NEW WALLET]]></String>
   <String Id="terminal-setup-loadwallet"><![CDATA[LOAD BACKUP]]></String>
-
-
-  <String Id="terminal-setup-setpin"><![CDATA[Set your PIN]]></String>
-  <String Id="terminal-setup-confirmpin"><![CDATA[Confirm your PIN]]></String>
-  <String Id="terminal-setup-setpin-hint"><![CDATA[(minimum of 4 characters)]]></String>
-  <String Id="terminal-setup-confirmpin-hint"><![CDATA[(don't forget it!)]]></String>
 
 
   <String Id="terminal-setup-tpm-is-full"><![CDATA[Your TPM is full. Unable to create wallet.]]></String>
@@ -98,11 +83,6 @@
   <String Id="terminal-settings-feecoeff"><![CDATA[Fee Coefficient:]]></String>
 
 
-  <String Id="terminal-settings-oldpin"><![CDATA[Enter Old PIN]]></String>
-
-  <String Id="terminal-settings-updatepin"><![CDATA[Update PIN]]></String>
-  <String Id="terminal-settings-pin-updated"><![CDATA[Your PIN has been updated!]]></String>
-
 
   <String Id="terminal-settings-backupcodes"><![CDATA[Seed Phrase]]></String>
   <String Id="terminal-settings-language"><![CDATA[Language]]></String>
@@ -136,7 +116,7 @@
   <String Id="terminal-unlockpage-unlockbutton"><![CDATA[Unlock]]></String>
   <String Id="terminal-unlockpage-exitbutton"><![CDATA[Exit]]></String>
 
-  <String Id="terminal-send-confirmpin"><![CDATA[Confirm PIN to Send]]></String>
+	
   <String Id="terminal-sendamount-title"><![CDATA[Amount to Send]]></String>
 
   <String Id="terminal-send-confirm-title"><![CDATA[Confirm Transaction]]></String>
