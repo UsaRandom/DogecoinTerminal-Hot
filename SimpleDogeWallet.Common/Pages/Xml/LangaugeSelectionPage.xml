@@ -11,7 +11,7 @@
   
   <common:ButtonControl StartPosition="20,30" EndPosition="45,38" TextSize="4" Name="EnglishButton" BackgroundColor="DarkGrey" ForegroundColor="White" Text="English" />
   <common:ButtonControl StartPosition="55,30" EndPosition="80,38" TextSize="4" Name="JapaneseButton" BackgroundColor="DarkGrey" ForegroundColor="White" Text="日本語" />
-  <common:ButtonControl StartPosition="20,40" EndPosition="45,48" TextSize="4" Name="KoreanButton" BackgroundColor="DarkGrey" ForegroundColor="White" Text="한국인" />
+  <common:ButtonControl StartPosition="20,40" EndPosition="45,48" TextSize="4" Name="KoreanButton" BackgroundColor="DarkGrey" ForegroundColor="White" Text="한국어" />
   <common:ButtonControl StartPosition="55,40" EndPosition="80,48" TextSize="4" Name="SpanishButton" BackgroundColor="DarkGrey" ForegroundColor="White" Text="Español" />
   <common:ButtonControl StartPosition="20,50" EndPosition="45,58" TextSize="4" Name="ChineseSimplifiedButton" BackgroundColor="DarkGrey" ForegroundColor="White" Text="簡體字" />
   <common:ButtonControl StartPosition="55,50" EndPosition="80,58" TextSize="4" Name="ChineseTraditionalButton" BackgroundColor="DarkGrey" ForegroundColor="White" Text="繁體字" />
